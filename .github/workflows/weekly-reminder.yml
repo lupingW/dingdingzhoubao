@@ -19,9 +19,10 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
+          cache: 'npm'               # 启用 npm 缓存加速
 
       - name: 安装依赖
         run: npm install
 
       - name: 运行 index.js 发送钉钉消息
-        run: node index.js
+        run: npm run serve
