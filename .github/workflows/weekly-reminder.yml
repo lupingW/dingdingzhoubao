@@ -1,0 +1,27 @@
+name: 周报填写提醒
+
+on:
+  schedule:
+    # 每周四下午 1 点（北京时间）触发
+    # GitHub Actions 使用 UTC 时间，北京时间 13:00 = UTC 05:00
+    - cron: '0 5 * * 4'
+  # 手动触发，方便测试
+  workflow_dispatch:
+
+jobs:
+  send-dingtalk-message:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+
+      - name: 设置 Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: 安装依赖
+        run: npm install
+
+      - name: 运行 index.js 发送钉钉消息
+        run: node index.js
