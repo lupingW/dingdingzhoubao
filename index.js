@@ -32,7 +32,7 @@ const sendWeeklyReportReminder = () => {
         'isAtAll': true
       },
       'text': {
-          'content': '请大家在周会前填写完周报'
+          'content': '请大家在周会前填写完周报 https://alidocs.dingtalk.com/i/nodes/Obva6QBXJw9wwzaks6yn6Lp9Wn4qY5Pr?utm_scene=person_space'
       },
       'msgtype':'text'
     })
